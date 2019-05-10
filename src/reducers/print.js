@@ -7,12 +7,17 @@ const INITIAL_STATE = {
 const print = (state = INITIAL_STATE, action) => {
   switch (action.type) {
     case UPDATE_PRINTER:
+      let printers = state.printers.slice()
       if (Array.isArray(action.printer)) {
-        state.printers = state.printers.concat(action.printer)
+        printers = printers.concat(action.printer)
       } else {
-        state.printers.push(action.printer)
+        printers.push(action.printer)
       }
-      return { ...state }
+
+      return {
+        ...state,
+        printers: printers
+      }
 
     default:
       return state

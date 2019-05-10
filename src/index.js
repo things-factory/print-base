@@ -1,1 +1,1 @@
-export * from './action/print'
+export * from './actions/print'

@@ -1,18 +1,22 @@
-import { TOGGLE_PRINT_LIST } from '../actions/print'
+import { UPDATE_PRINTER } from '../actions/print'
 
 const INITIAL_STATE = {
-  show: false,
-  prints: ['HP DesignJet 60 Z6610', 'CANON IR ADV C5550i II', 'EPSON aculaser-C9300N A3']
+  printers: []
 }
 
-const main = (state = INITIAL_STATE, action) => {
+const print = (state = INITIAL_STATE, action) => {
   switch (action.type) {
-    case TOGGLE_PRINT_LIST:
-      return { ...state, show: !state.show }
+    case UPDATE_PRINTER:
+      if (Array.isArray(action.printer)) {
+        state.printers = state.printers.concat(action.printer)
+      } else {
+        state.printers.push(action.printer)
+      }
+      return { ...state }
 
     default:
       return state
   }
 }
 
-export default main
+export default print

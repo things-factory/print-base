@@ -1,1 +1,2 @@
 export const UPDATE_PRINTER = 'UPDATE_PRINTER'
+export const APPEND_PRINTER = 'APPEND_PRINTER'

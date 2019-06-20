@@ -1,4 +1,4 @@
-import { UPDATE_PRINTER } from '../actions/print'
+import { UPDATE_PRINTER, APPEND_PRINTER } from '../actions/print'
 
 const INITIAL_STATE = {
   printers: []
@@ -7,16 +7,20 @@ const INITIAL_STATE = {
 const print = (state = INITIAL_STATE, action) => {
   switch (action.type) {
     case UPDATE_PRINTER:
-      let printers = state.printers.slice()
-      if (Array.isArray(action.printer)) {
-        printers = printers.concat(action.printer)
-      } else {
-        printers.push(action.printer)
+      let printers = action.printer
+      if (!Array.isArray(printer)) {
+        printers = [printers]
       }
 
       return {
         ...state,
-        printers: printers
+        printers: [...state.printers, ...printers]
+      }
+
+    case APPEND_PRINTER:
+      return {
+        ...state,
+        printers: [...printers, action.printer]
       }
 
     default:

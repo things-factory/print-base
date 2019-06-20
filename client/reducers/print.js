@@ -8,7 +8,7 @@ const print = (state = INITIAL_STATE, action) => {
   switch (action.type) {
     case UPDATE_PRINTER:
       let printers = action.printer
-      if (!Array.isArray(printer)) {
+      if (!Array.isArray(printers)) {
         printers = [printers]
       }
 
@@ -20,7 +20,7 @@ const print = (state = INITIAL_STATE, action) => {
     case APPEND_PRINTER:
       return {
         ...state,
-        printers: [...printers, action.printer]
+        printers: [...state.printers, action.printer]
       }
 
     default:

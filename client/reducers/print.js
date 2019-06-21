@@ -1,11 +1,18 @@
 import { UPDATE_PRINTER, APPEND_PRINTER, REGISTER_PRINTER_TYPE } from '../actions/print'
 import { paperPrinterHandler } from '../handlers/paper-printer-handler'
+import { previewPrinterHandler } from '../handlers/preview-printer-handler'
 
 const INITIAL_STATE = {
   printerTypes: {
-    paper: paperPrinterHandler
+    paper: paperPrinterHandler,
+    preview: previewPrinterHandler
   },
-  printers: []
+  printers: [
+    {
+      type: 'preview',
+      name: 'Preview'
+    }
+  ]
 }
 
 const print = (state = INITIAL_STATE, action) => {

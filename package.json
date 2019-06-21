@@ -1,6 +1,6 @@
 {
   "name": "@things-factory/print-base",
-  "version": "0.1.4",
+  "version": "0.1.5",
   "main": "dist-server/index.js",
   "browser": "client/index.js",
   "things-factory": true,
@@ -23,7 +23,8 @@
     "migration:revert": "node ./node_modules/typeorm/cli.js migration:revert"
   },
   "dependencies": {
-    "@things-factory/shell": "*"
+    "@things-factory/shell": "*",
+    "printer": "^0.2.2"
   },
   "devDependencies": {
     "@things-factory/tester": "*"

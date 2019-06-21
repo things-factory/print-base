@@ -14,9 +14,9 @@ function content_print(targetElement) {
   }
 }
 
-export function paperPrinterHandler(printer, { accept, content, name, options }) {
+export function previewPrinterHandler(printer, { accept, content, name, options }) {
   /* content should be a element */
-  content = typeof content == 'function' ? content.call() : content
+  const element = typeof content == 'function' ? content.call() : content
 
-  content_print(content)
+  content_print(element)
 }

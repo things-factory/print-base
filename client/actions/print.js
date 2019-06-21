@@ -6,7 +6,7 @@ export const REGISTER_PRINTER_TYPE = 'REGISTER_PRINTER_TYPE'
 
 export function print(printer, printable) {
   const { type } = printer
-  const handler = store.getState().print.types[type]
+  const handler = store.getState().print.printerTypes[type]
 
-  handler.call(null, printable)
+  handler.call(null, printer, printable)
 }

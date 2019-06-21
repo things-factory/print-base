@@ -15,7 +15,7 @@ function content_print(targetElement) {
   window.print()
 }
 
-export function paperPrinterHandler({ accept, content, name, options }) {
+export function paperPrinterHandler(printer, { accept, content, name, options }) {
   /* content should be a element */
   content = typeof content == 'function' ? content.call() : content
 

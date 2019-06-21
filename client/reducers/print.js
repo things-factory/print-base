@@ -2,7 +2,7 @@ import { UPDATE_PRINTER, APPEND_PRINTER, REGISTER_PRINTER_TYPE } from '../action
 import { paperPrinterHandler } from '../handlers/paper-printer-handler'
 
 const INITIAL_STATE = {
-  types: {
+  printerTypes: {
     paper: paperPrinterHandler
   },
   printers: []
@@ -13,9 +13,9 @@ const print = (state = INITIAL_STATE, action) => {
     case REGISTER_PRINTER_TYPE:
       return {
         ...state,
-        types: {
-          ...state.types,
-          [action.type]: action.handler
+        printerTypes: {
+          ...state.printerTypes,
+          [action.printerType]: action.handler
         }
       }
 

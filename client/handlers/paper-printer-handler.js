@@ -1,14 +1,16 @@
-function content_print(targetElement) {
-  if (targetElement) {
-    let popup = window.open('', '_blank')
+function content_print(element) {
+  if (element) {
+    var restoreStyle = element.style
 
-    popup.document.write('<body>')
-    popup.document.write(targetElement.innerHTML)
-    popup.document.write('</body>')
+    element.style.position = 'fixed'
+    element.style.left = 0
+    element.style.top = 0
+    element.style.width = '100vw'
+    element.style.height = '100vh'
 
-    popup.document.close()
+    window.print()
 
-    popup.print()
+    element.style = restoreStyle
   } else {
     window.print()
   }
@@ -16,7 +18,7 @@ function content_print(targetElement) {
 
 export function paperPrinterHandler(printer, { accept, content, name, options }) {
   /* content should be a element */
-  content = typeof content == 'function' ? content.call() : content
+  const element = typeof content == 'function' ? content.call() : content
 
-  content_print(content)
+  content_print(element)
 }

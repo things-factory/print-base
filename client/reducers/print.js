@@ -18,6 +18,10 @@ const INITIAL_STATE = {
 const print = (state = INITIAL_STATE, action) => {
   switch (action.type) {
     case REGISTER_PRINTER_TYPE:
+      /*
+       * print handler는 디바이스 특성을 가지므로, 비동기 함수를 전제로 한다.
+       * print handler : async function handler(printer, { accept, content, name, options })
+       */
       return {
         ...state,
         printerTypes: {
@@ -27,6 +31,9 @@ const print = (state = INITIAL_STATE, action) => {
       }
 
     case UPDATE_PRINTER:
+      /*
+       * printer : { type, name }
+       */
       let printers = action.printer
       if (!Array.isArray(printers)) {
         printers = [printers]

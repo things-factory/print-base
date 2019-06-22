@@ -16,9 +16,11 @@ function content_print(element) {
   }
 }
 
-export function previewPrinterHandler(printer, { accept, content, name, options }) {
+export async function previewPrinterHandler(printer, { accept, content, name, options }) {
   /* content should be a element */
   const element = typeof content == 'function' ? content.call() : content
 
   content_print(element)
+
+  return true
 }

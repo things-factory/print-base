@@ -1,4 +1,4 @@
-import { UPDATE_PRINTER, APPEND_PRINTER, REGISTER_PRINTER_TYPE } from '../actions/print'
+import { UPDATE_PRINTER, UPDATE_PRINTERS, APPEND_PRINTER, REGISTER_PRINTER_TYPE } from '../actions/print'
 import { paperPrinterHandler } from '../handlers/paper-printer-handler'
 import { previewPrinterHandler } from '../handlers/preview-printer-handler'
 

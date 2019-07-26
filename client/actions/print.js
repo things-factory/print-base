@@ -1,6 +1,7 @@
 import { store } from '@things-factory/shell'
 
 export const UPDATE_PRINTER = 'UPDATE_PRINTER'
+export const UPDATE_PRINTERS = 'UPDATE_PRINTERS'
 export const APPEND_PRINTER = 'APPEND_PRINTER'
 export const REGISTER_PRINTER_TYPE = 'REGISTER_PRINTER_TYPE'
 

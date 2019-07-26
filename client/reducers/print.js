@@ -16,6 +16,7 @@ const INITIAL_STATE = {
 }
 
 const print = (state = INITIAL_STATE, action) => {
+  let printers
   switch (action.type) {
     case REGISTER_PRINTER_TYPE:
       /*
@@ -34,7 +35,7 @@ const print = (state = INITIAL_STATE, action) => {
       /*
        * printer : { type, name }
        */
-      let printers = action.printer
+      printers = action.printer
       if (!Array.isArray(printers)) {
         printers = [printers]
       }
@@ -48,7 +49,7 @@ const print = (state = INITIAL_STATE, action) => {
       /*
        * printer : { type, name }
        */
-      let printers = action.printer
+      printers = action.printer
       if (!Array.isArray(printers)) {
         printers = [printers]
       }

@@ -24,6 +24,7 @@
   },
   "dependencies": {
     "@things-factory/shell": "*",
+    "bonjour": "^3.5.0",
     "printer": "^0.2.2"
   },
   "devDependencies": {

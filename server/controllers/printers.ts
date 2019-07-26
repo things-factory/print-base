@@ -1,5 +1,3 @@
-import print from 'printer'
-
 export const printers = () => {
-  return print.getPrinters()
+  return (global as any).printers || []
 }

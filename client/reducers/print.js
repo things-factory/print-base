@@ -41,6 +41,20 @@ const print = (state = INITIAL_STATE, action) => {
 
       return {
         ...state,
+        printers: [...printers]
+      }
+
+    case UPDATE_PRINTERS:
+      /*
+       * printer : { type, name }
+       */
+      let printers = action.printer
+      if (!Array.isArray(printers)) {
+        printers = [printers]
+      }
+
+      return {
+        ...state,
         printers: [...state.printers, ...printers]
       }
 

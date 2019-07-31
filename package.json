@@ -1,6 +1,6 @@
 {
   "name": "@things-factory/print-base",
-  "version": "0.1.17",
+  "version": "0.1.18",
   "main": "dist-server/index.js",
   "browser": "client/index.js",
   "things-factory": true,
@@ -18,6 +18,7 @@
     "prepublish": "npm run build"
   },
   "dependencies": {
+    "@things-factory/print-proxy-service": "^1.0.0-beta",
     "@things-factory/shell": "*"
   },
   "devDependencies": {

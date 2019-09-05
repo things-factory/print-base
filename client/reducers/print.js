@@ -12,7 +12,8 @@ const INITIAL_STATE = {
       type: 'preview',
       name: 'Preview'
     }
-  ]
+  ],
+  staticPrinters: []
 }
 
 const print = (state = INITIAL_STATE, action) => {
@@ -23,12 +24,14 @@ const print = (state = INITIAL_STATE, action) => {
        * print handler는 디바이스 특성을 가지므로, 비동기 함수를 전제로 한다.
        * print handler : async function handler(printer, { accept, content, name, options })
        */
+
       return {
         ...state,
         printerTypes: {
           ...state.printerTypes,
           [action.printerType]: action.handler
-        }
+        },
+        staticPrinters: [...state.staticPrinters, ...(action.staticPrinters || [])]
       }
 
     case UPDATE_PRINTER:

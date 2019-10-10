@@ -7,13 +7,13 @@ const INITIAL_STATE = {
     paper: paperPrinterHandler,
     preview: previewPrinterHandler
   },
-  printers: [
+  printers: [],
+  staticPrinters: [
     {
       type: 'preview',
       name: 'Preview'
     }
-  ],
-  staticPrinters: []
+  ]
 }
 
 const print = (state = INITIAL_STATE, action) => {

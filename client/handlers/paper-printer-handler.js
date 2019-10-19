@@ -5,8 +5,8 @@ function content_print(element) {
     element.style.position = 'fixed'
     element.style.left = 0
     element.style.top = 0
-    element.style.width = '100vw'
-    element.style.height = '100vh'
+    element.style.width = '100%'
+    element.style.height = '100%'
 
     window.print()
 

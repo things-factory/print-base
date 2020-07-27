@@ -18,7 +18,7 @@ function content_print(element) {
 
 export async function paperPrinterHandler(printer, { accept, content, name, options }) {
   /* content should be a element */
-  const element = typeof content == 'function' ? content.call() : content
+  const element = typeof content == 'function' ? await content.call() : content
 
   content_print(element)
 
